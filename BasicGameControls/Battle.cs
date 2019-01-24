@@ -286,20 +286,28 @@ namespace BasicGameControls
 					break;
 				case "Battle":
 					{
-						gameTimer.Interval = 180;
-						foeHP -= movePwrHero;
-						foeBar.Value = foeHP;
-
-						heroHP -= movePwrFoe;
-						heroBar.Value = heroHP;
-
+						try
+						{
+							gameTimer.Interval = 180;
+							foeHP -= movePwrHero;
+							foeBar.Value = foeHP;
+						}
+						catch
+						{
+							foeBar.Value = 0;
+						}
 						menuState = "Main";
 
 						if (foeHP <= 0)
 						{
-							foeBar.Value = 0;
 							foeHP = 0;
 							menuState = "BattleWin";
+						}
+						else
+						{
+
+							heroHP -= movePwrFoe;
+							heroBar.Value = heroHP;
 						}
 					}
 					break;
