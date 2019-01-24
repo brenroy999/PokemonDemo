@@ -112,11 +112,6 @@ namespace BasicGameControls
                         break;
                 }
             }
-            else
-            {
-                buttonA = false;
-            }
-
         }
 
         private void gameTimer_Tick(object sender, EventArgs e)
@@ -224,7 +219,13 @@ namespace BasicGameControls
                     }
                 }
             }
-            Refresh();
+			if (player.Location.X == 113 && player.Location.Y == 17)
+			{
+				Application.Exit();
+			}
+			label1.Text = player.Location.X + "\n" +
+						  player.Location.Y;
+			Refresh();
         }
 
         private void Demo_Paint(object sender, PaintEventArgs e)
@@ -325,10 +326,5 @@ namespace BasicGameControls
                     break;
             }
         }
-
-        private void Demo_Load(object sender, EventArgs e)
-        {
-
-        }
-    }
+	}
 }
