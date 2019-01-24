@@ -2334,25 +2334,10 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="move_select" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAPAAAAAwCAIAAACg32BxAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMS40E0BoxAAAA3FJREFUeF7tnTFy
-        2zAQRXOclD6CS5Y+gkuXOkJKlzmGjpAjuFSpo7hLVvzfMBaARFIDRcb6v9nREMSaXMx/Vqsf0+OTShWm
-        KPTPhwdVsEoZf5N8cdKT0FjvdvvX1zdVgLIo84zD55ufl0I/P//evfxShSkLFAF/k3zTeSn0NL0UHaqh
-        ywLNhQ6fbzpvQ+j9n/3xcFQNVxZcCvGC0GHybZ63FNqa3sWwpIzPCR0s3/q8pdAmPnvFgFh8RcCx863P
-        u0rov+LrwWw8ElpCjwqz8UhoCT0qzMbzZYXm0C3YcRUSOg7MxjO60NM0HY9uQjZVYFdCx4HZeNYLbeoA
-        CMRF5VMvOHQLdszUA7CpArsSOg7MxrNJaFPHwEWxRE9HOHQLdmQjcT3DpgrsSug4MBvPVqHTRbGcW3rC
-        oVuw48yr2VSBXQkdB2bjGVdovLd+NZsqsCuh48BsPKMLjescNlVgV0LHgdl4NgkNTCODi48lejrCoVvY
-        7oX3sqkCuxI6DszGs0loOGTUy+5w6Ba2i7ejs4BNFdiV0HFgNp6tQuPauKBUFzh0i/S/xFYPmyqwK6Hj
-        wGw84wrNvgo2VWBXQseB2XjWC336Ssw0Kpbd4dAtLr+aTRXYldBxYDae9ULHQELHgdl4JLSEHhVm45HQ
-        EnpUmI1HQkvoUWE2nrsIzYG6wkcvIaHjwGw8/1PoaZoOhze74EBdwSsWkdBxYDae9UKbjgVmZ/oE8JWL
-        GdwBacmBuoJXLCKh48BsPOuFNhfhbn6Rf9ZLFP483bRrDtQVvGURCR0HZuNZLzSAl+ki/yxuzu2f5Dc5
-        UFfw5EUkdByYjUdCS+hRYTaeGwkNcDPdT0sO1BU8eREJHQdm47laaIgLTU/yzqQlLqyKvwIcqCt89BIS
-        Og7MxnO10Pl1YXChryGhRX+Yjaej0LhpNJf5HQ7UFT56CQkdB2bjuZHQCbuPT+7NcKCu8NFLSOg4MBvP
-        VqFNzWRnus5vGlgWxb0ZDtQVPnoJCR0HZuPZKnQXOFBX+OglrhRaXEf9ZXZr7iL0HZHQwZHQpdD6SYqh
-        0U9SlELjzCa+arhK6VqdE9oqTL7N834KrZ8qDFMWZS104Hzz82bf0Lu9nA5QpxB3+1roqPkW56XQOLMq
-        TDHTD6HD55vOexI6nVkVqZDs98kXJ6XQKlWEenz6B1YrXzNRMVVGAAAAAElFTkSuQmCC
-</value>
+  <data name="move_select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\move_select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="move_select_ralts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\move_select_ralts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -243,6 +243,16 @@ namespace BasicGameControls.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap move_select_ralts {
+            get {
+                object obj = ResourceManager.GetObject("move_select_ralts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap npc_b {
             get {
                 object obj = ResourceManager.GetObject("npc_b", resourceCulture);

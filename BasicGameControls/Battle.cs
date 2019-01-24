@@ -19,17 +19,17 @@ namespace BasicGameControls
         string menuState = "Intro";
         string redArrow = "Up";
         string battleJason = "Trainer JASON would like to battle!";
+		string moveHero = null;
+		string moveFoe = null;
         #endregion
 
         #region Pokemon Variables
         string heroMon = "N/A";
-        int heroLevel = 0;
-        int heroHP = 0;
+        int heroHP = 100;
         int movePwrHero = 0;
 
         string foeMon = "N/A";
-        int foeLevel = 0;
-        int foeHP = 0;
+        int foeHP = 100;
         int movePwrFoe = 0;
         #endregion
 
@@ -37,9 +37,12 @@ namespace BasicGameControls
         int descLocX = 12;
         int descLocY = 122;
         int moveSlot = 1;
+		int moveSlotFoe = 1;
         int throwFrame = 1;
         int throwX = 16;
         int throwXnpc = 146;
+
+		Random randGen = new Random();
         #endregion
 
         bool buttonA = false;
@@ -199,6 +202,7 @@ namespace BasicGameControls
                         if (buttonA == true)
                         {
                             menuState = "PokemonOut";
+							buttonA = false;
                         }
                     }
                     break;
@@ -240,42 +244,62 @@ namespace BasicGameControls
                         if (buttonA == true && menuLoc == "FIGHT")
                         {
                             menuState = "MoveSelect";
+							buttonA = false;
                         }
                     }
                     break;
                 case "MoveSelect":
-                    switch (moveSlot)
-                    {
-                        case 1:
-                            {
-                                if (buttonA == true)
-                                {
-                                    movePwrHero = 30;
-                                }
-                            }
-                            break;
-                        case 2:
-                            {
-                                if (buttonA == true)
-                                {
-                                    movePwrHero = 20;
-                                }
-                            }
-                            break;
-                        case 3:
-                            {
+					{
+						switch (moveSlot)
+						{
+							case 1:
+								{
+//									if (buttonA == true)
+									{
+										moveHero = "CONFUSION";
+										movePwrHero = 50;
+									}
+								}
+								break;
+							case 2:
+								{
+//									if (buttonA == true)
+									{
+										moveHero = "RETURN";
+										movePwrHero = 40;
+									}
+								}
+								break;
 
-                            }
-                            break;
-                        case 4:
-                            {
+						}
+						switch (moveSlotFoe)
+						{
+							case 1:
+								movePwrFoe = 40; //Quick Attack
+								break;
+							case 2:
+								movePwrFoe = 30; //Double Kick
+								break;
 
-                            }
-                            break;
-                    }
+						}
+						if (buttonA == true && moveSlot == 1 || buttonA == true && moveSlot == 2)
+						{
+							menuState = "Battle";
+							buttonA = false;
+						}
+					}
                     break;
+				case "Battle":
+					{
+						foeHP = foeHP - movePwrHero;
+						heroHP = heroHP - movePwrFoe;
+					}
+					break;
             }
-            label1.Text = "" + moveSlot;
+            label1.Text = ""+ foeHP + "\n" + 
+						 heroHP + "\n" +
+						 menuState + "\n" +
+						 moveSlot;
             Refresh();
         }
 
@@ -320,7 +344,6 @@ namespace BasicGameControls
                     {
                         gameTimer.Interval = (160);
                         e.Graphics.DrawImage(Properties.Resources.trainer_bird, throwXnpc, 4, 64, 64);
-                        //                        e.Graphics.DrawImage(Properties.Resources.back1, 16, 48, 64, 64);
                         e.Graphics.DrawImage(Properties.Resources.battle_intro, 0, 112, 240, 48);
                         e.Graphics.DrawString(battleJason, menuDesc, shadowDesc, descLocX + 1, descLocY + 1);
                         e.Graphics.DrawString(battleJason, menuDesc, colorDesc, descLocX, descLocY);
@@ -378,7 +401,7 @@ namespace BasicGameControls
 
                 case "MoveSelect":
                     {
-                        e.Graphics.DrawImage(Properties.Resources.move_select, 0, 112, 240, 48);
+                        e.Graphics.DrawImage(Properties.Resources.move_select_ralts, 0, 112, 240, 48);
 
                         switch (moveSlot)
                         {
@@ -397,6 +420,18 @@ namespace BasicGameControls
                         }
                     }
                     break;
+				case "Battle":
+					{
+						descLocX = 12;
+						descLocY = 122;
+						e.Graphics.DrawImage(Properties.Resources.battle_intro, 0, 112, 240, 48);
+						e.Graphics.DrawString(heroMon + " used " + moveHero + "!", menuDesc, shadowDesc, descLocX + 1, descLocY + 1);
+						e.Graphics.DrawString(heroMon + " used " + moveHero + "!", menuDesc, colorDesc, descLocX, descLocY);
+
+						e.Graphics.DrawString(foeMon + " used " + moveFoe + "!", menuDesc, shadowDesc, descLocX + 1, descLocY + 1);
+						e.Graphics.DrawString(foeMon + " used " + moveFoe + "!", menuDesc, colorDesc, descLocX, descLocY);
+					}
+					break;
             }
 
 
@@ -404,7 +439,6 @@ namespace BasicGameControls
             {
                 e.Graphics.DrawImage(Properties.Resources.hero_ui, 128, 73, 106, 40);
                 e.Graphics.DrawImage(Properties.Resources.foe_ui, 12, 15, 100, 32);
-                e.Graphics.DrawString(heroLevel + "", uiFont, indiColor, 216, 78);
             }
             if (foeMon == "EEVEE")
             {
@@ -414,6 +448,6 @@ namespace BasicGameControls
             {
                 e.Graphics.DrawImage(Properties.Resources.ralts_b, 24, 48, 64, 64);
             }
-        }
+		}
     }
 }
